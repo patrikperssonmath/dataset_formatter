@@ -1,0 +1,7 @@
+pytest
+scikit-image
+h5py
+autopep8
+parse
+opencv-python
+pandas

@@ -1,0 +1,6 @@
+*.simg
+.eps
+
+mlruns
+
+lightning_logs

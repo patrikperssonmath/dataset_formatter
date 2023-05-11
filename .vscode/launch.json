@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: train_mlflow",
+            "type": "python",
+            "request": "launch",
+            "program": "mlflow_training.py",
+            "console": "integratedTerminal",
+            "env": {"PYTORCH_JIT":"0"},
+            "args": [
+                "--accelerator=gpu",
+                "--devices=1",
+                "--max_epochs=50",
+                "--detect_anomaly=False",
+                "--gradient_clip_val=0.5",
+                "--training_configs_path=config/dataset_training.yml",
+                "--load_checkpoint=lightning_logs/version_63/checkpoints/epoch=2-step=39912.ckpt"
+            ],
+            "justMyCode": false
+        },
+    ]
+}

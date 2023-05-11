@@ -1,0 +1,6 @@
+[submodule "thirdparty/tartanair_tools"]
+	path = thirdparty/tartanair_tools
+	url = https://github.com/patrikperssonmath/tartanair_tools.git
+[submodule "thirdparty/cvgraph"]
+	path = thirdparty/cvgraph
+	url = https://github.com/patrikperssonmath/cvgraph.git
