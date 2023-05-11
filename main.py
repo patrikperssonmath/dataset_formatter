@@ -1,17 +1,20 @@
 from cv_graph.trace_generator import TraceGenerator
 from cv_graph.covisibility_graph_generator_multi_core import CovisibilityGraphGenerator
 import glob
-import cv2
-import os
-import yaml
-import numpy as np
-import sys
+import argparse
 
 from dataset.tartanair import TartanAir
 
+
 def main():
 
-    paths = "/database/tartanair/export/*/*/*/*"
+    parser = argparse.ArgumentParser(description='')
+    parser.add_argument("--paths", type=str,
+                        default="/database/tartanair/export/*/*/*/*")
+
+    args = parser.parse_args()
+
+    paths = args.paths
     paths = glob.glob(paths)
 
     for path in paths:

@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     wget \
     git \
     unzip \
+    zip \
     nano \
     && rm -rf /var/lib/apt/lists/*
 
