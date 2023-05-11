@@ -39,6 +39,6 @@ ENV GRPC_POLL_STRATEGY epoll1
 
 ENV DEBIAN_FRONTEND=dialog
 
-ENV PATH="${PATH}:/home/vscode/.local/bin"
+ENV PATH="${PATH}:/home/${USERNAME}/.local/bin"
 
-RUN echo 'export PYTHONPATH=$PYTHONPATH:/workspace/thirdparty/cvgraph' >> /home/vscode/.bashrc 
+RUN echo 'export PYTHONPATH=$PYTHONPATH:/workspace/thirdparty/cvgraph' >> /home/$USERNAME/.bashrc 
