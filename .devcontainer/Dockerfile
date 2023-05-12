@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     unzip \
     zip \
     nano \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the user
@@ -35,6 +36,10 @@ RUN apt-get update && \
     apt-get install -y libqt5gui5 mesa-utils libegl1-mesa libegl1-mesa-dev libgbm-dev libgbm1 libgl1-mesa-dev libgl1-mesa-dri libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev && \
     rm -rf /var/lib/apt/lists/*
 ENV QT_DEBUG_PLUGINS=1
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install
 
 ENV GRPC_POLL_STRATEGY epoll1
 
