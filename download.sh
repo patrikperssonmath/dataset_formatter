@@ -11,8 +11,11 @@ find $OUTPUTDIR -name "*.zip" -type f -delete
 python main.py --paths "${EXPORTDIR}/*/*/*/*"
 
 for file in $EXPORTDIR/*; do
-    zip -r ${file%.*}.zip $file
+    zip_path=${file%.*}.zip
+
+    zip -r $zip_path $file
+
+    aws s3 cp s3://$S3BUCKET/$(basename -- $zip_path) $zip_path
 done
 
-#send to s3 bucket
-#rm -rf $OUTPUTDIR
+rm -rf $OUTPUTDIR

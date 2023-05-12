@@ -5,3 +5,5 @@ datasets=("abandonedfactory")
 for val1 in ${datasets[*]}; do
     ./download.sh $val1
 done
+
+#shutdown -h now
