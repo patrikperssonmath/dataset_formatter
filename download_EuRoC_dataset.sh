@@ -10,4 +10,4 @@ download(){
 
 mkdir -p $1 && download $1 $2
 
-python /workspace/main_mav.py --path $1/*
+python /workspace/main_mav.py --path "$1/*"
