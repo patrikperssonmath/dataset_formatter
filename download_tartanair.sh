@@ -15,7 +15,7 @@ for file in $EXPORTDIR/*; do
 
     zip -r $zip_path $file
 
-    aws s3 cp s3://$S3BUCKET/$(basename -- $zip_path) $zip_path
+    aws s3 cp $zip_path s3://$S3BUCKET/$(basename -- $zip_path) 
 done
 
 rm -rf $OUTPUTDIR
