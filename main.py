@@ -17,6 +17,8 @@ def main():
     paths = args.paths
     paths = glob.glob(paths)
 
+    image_size = [480, 640]
+
     for path in paths:
 
         dataset = TartanAir(path)
@@ -25,7 +27,7 @@ def main():
 
         result_path = trace_gen.calculate(dataset)
 
-        cv_graph_gen = CovisibilityGraphGenerator()
+        cv_graph_gen = CovisibilityGraphGenerator(max_homography_agreement=0.9, scale=image_size)
 
         cv_graph_gen.calculate(result_path)
 
